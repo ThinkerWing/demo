@@ -1,0 +1,9 @@
+packages:
+  # all packages in direct subdirs of packages/
+  # 所有的前端项目存储的地方
+  - 'packages/*'
+  # all packages in subdirs of components/
+  # 公共的，所有的项目的公开组件
+  - 'components/**'
+  # 公共的方法 api -axios
+  - 'api/**'
