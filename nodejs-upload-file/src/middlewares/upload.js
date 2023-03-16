@@ -11,7 +11,7 @@ const excelFilter = (req, file, cb) => {
   }
 };
 
-var storage = multer.diskStorage({
+const storage = multer.diskStorage({
   /*
 destination 选项主要作用是确定文件上传后存储的文件夹，filename 
 我们将[timestamp]-zhijianqiu-前缀添加到文件的原始名称中，以确保不会出现重复项。
@@ -25,5 +25,5 @@ destination 选项主要作用是确定文件上传后存储的文件夹，filen
   }
 });
 
-var uploadFile = multer({ storage: storage, fileFilter: excelFilter });
+const uploadFile = multer({ storage: storage, fileFilter: excelFilter });
 module.exports = uploadFile;

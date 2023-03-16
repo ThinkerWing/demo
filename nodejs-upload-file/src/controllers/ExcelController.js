@@ -15,21 +15,22 @@ const excel = require("exceljs");
  */
 const upload = async (req, res) => {
   try {
-    if (req.file == undefined) {
+    if (req.file === undefined) {
       return res.status(400).send("Please upload an excel file!");
     }
 
-    let path =
+    const path =
       __basedir + "/resources/static/assets/uploads/" + req.file.filename;
 
     readXlsxFile(path).then(rows => {
       // skip header
       rows.shift();
+      // [ [ 1, 'React', true ], [ 2, 'vue', true ], [ 3, 'angular', true ] ]
 
-      let excelData = [];
+      const excelData = [];
 
       rows.forEach(row => {
-        let item = {
+        const item = {
           id: row[0],
           title: row[1],
           description: row[2],
@@ -74,7 +75,7 @@ const getExcelData = (req, res) => {
 
 const download = (req, res) => {
   ExcelDB.findAll().then(objs => {
-    let excelData = [];
+    const excelData = [];
 
     objs.forEach(obj => {
       excelData.push({
@@ -85,8 +86,8 @@ const download = (req, res) => {
       });
     });
 
-    let workbook = new excel.Workbook();
-    let worksheet = workbook.addWorksheet("ExcelData");
+    const workbook = new excel.Workbook();
+    const worksheet = workbook.addWorksheet("ExcelData");
 
     worksheet.columns = [
       { header: "Id", key: "id", width: 5 },

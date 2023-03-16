@@ -2,7 +2,7 @@ module.exports = {
   HOST: "localhost",
   USER: "root",
   PASSWORD: "123456",
-  DB: "testdb",
+  DB: "test_excel",
   dialect: "mysql",
   pool: {
     max: 5, // 池中的最大连接数
