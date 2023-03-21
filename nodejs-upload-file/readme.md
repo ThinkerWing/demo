@@ -3,6 +3,10 @@
 [https://juejin.cn/post/7103917336293277704](https://juejin.cn/post/7103917336293277704)
 
 [【Excel模版导出和上传】antd Upload + express + mysql 实现 Excel模版导出和上传](https://blog.csdn.net/daddykei/article/details/129584677?spm=1001.2014.3001.5502)
+
+可能遇到问题 Postman Error: Malformed part header?
+
+[删除我的集合中的请求并重新配置它并且它工作正常](https://stackoverflow.com/questions/72666144/why-do-i-get-this-error-postman-error-malformed-part-header)
 # 启动命令
 
 ```
@@ -24,6 +28,15 @@ npm start
 | Content-Type | application/vnd.openxmlformats- officedocument.spreadsheetml.sheet
 | ------- | -------
 
+video列表接口 <span style="color:orange">(GET)</span>: `http://localhost:8080/api/video/list`
+
+文件上传接口 <span style="color:orange">(POST)</span>: `http://localhost:8080/api/video/upload`
+
+```
+返回 "filename": "1679411986948-zhijianqiu-2648569280.mp3",
+通过 express.static 访问静态资源 可以访问到上传的视频
+app.use(express.static(path.join(__basedir, "resources/static/assets/uploads")));
+```
 # 目录结构
 
 ```
