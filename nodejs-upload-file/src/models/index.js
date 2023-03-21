@@ -19,6 +19,7 @@ db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
 db.excel = require("./ExcelModel.js")(sequelize, Sequelize);
+db.video = require("./Video.js")(sequelize, Sequelize);
 
 (async () => {
   try {
