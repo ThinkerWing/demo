@@ -1,0 +1,20 @@
+name: chatgpt-cr
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: write
+
+on:
+  pull_request:
+    types: [opened, reopened]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: anc95/ChatGPT-CodeReview@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.ACTION_TOKEN }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          LANGUAGE: Chinese
